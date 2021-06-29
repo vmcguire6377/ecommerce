@@ -17,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/vmcguire6377/ecommerce/issues"
   },
-  "homepage": "https://github.com/vmcguire6377/ecommerce#readme"
+  "homepage": "https://github.com/vmcguire6377/ecommerce#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.4"
+  }
 }
