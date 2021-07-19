@@ -4,3 +4,6 @@ Ecommerce is an application designed to allow an employer to make the business m
 Walk through video links: 
 https://drive.google.com/file/d/1HtmL7e8Po4kPkhphVF-2MaIQE2fJ4Ze-/view
 https://drive.google.com/file/d/1xXvlpFQPumtu4mF0I19SZt6TTkFQZX4B/view
+
+![ecommerce](https://user-images.githubusercontent.com/79176079/126211381-80091872-4e31-4463-98df-ce7f577117cc.PNG)
+
