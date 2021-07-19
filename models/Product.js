@@ -9,7 +9,6 @@ class Product extends Model {}
 // set up fields and rules for Product model
 Product.init(
   {
-    // define columns
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -17,24 +16,16 @@ Product.init(
       autoIncrement: true
     },
     product_name: {
-      types: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
-    category_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'category',
-        key: 'id'
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      validate: {
+        isDecimal: true
       }
-    
-  },
-  price: {
-    type: DataTypes.DECIMAL,
-    allowNull: false,
-    validate: {
-      isDecimal: true
-    }
-  },
+    },
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -42,9 +33,15 @@ Product.init(
       validate: {
         isNumeric: true
       }
+    },
+    category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id'
+      }
     }
   },
-  
   
   {
     sequelize,
@@ -54,7 +51,5 @@ Product.init(
     modelName: 'product',
   }
 );
-
-  
 
 module.exports = Product;

@@ -21,11 +21,12 @@ Product.findAll(
     ]
   }
 )
-})
+
 .then(dbProductData => res.json(dbProductData))
 .catch(err => {
   console.log(err);
   res.status(500).json(err);
+});
 });
 
 // get one product
@@ -37,8 +38,7 @@ Product.findOne({
     id: req.params.id
   },
 
-})
-.then(dbProductData => {
+}).then(dbProductData => {
   if (!dbProductData) {
     res.status(404).json({ message: 'No product found with this id.'});
     return;
@@ -52,7 +52,7 @@ Product.findOne({
 });
 
 // create new product
-//router.post('/', (req, res) => {
+router.post('/', (req, res) => {
   /* req.body should look like this...
     {
       product_name: "Basketball",
@@ -81,6 +81,7 @@ Product.findOne({
       console.log(err);
       res.status(400).json(err);
     });
+  });
 
 
 // update product
@@ -137,6 +138,10 @@ router.delete('/:id', (req, res) => {
       return;
     }
     res.json(dbProductData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   });
 });
 
